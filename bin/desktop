@@ -1,0 +1,15 @@
+#!/bin/bash
+# Usage: desktop [on|off]
+#
+# Toggles the visibility of your desktop icons.
+
+if [[ "$1" == "on" ]]; then
+  defaults write com.apple.finder CreateDesktop -bool true
+  killall Finder
+elif [[ "$1" == "off" ]]; then
+  defaults write com.apple.finder CreateDesktop -bool false
+  killall Finder
+else
+  echo "Usage: $(basename $0) [on|off]"
+  exit 1
+fi

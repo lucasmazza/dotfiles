@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for file in $(ls -1 {app,lib,spec,test}/**/*.rb 2>/dev/null); do
+  ruby -wc $file 1> /dev/null
+done

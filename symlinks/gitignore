@@ -1,0 +1,33 @@
+*.tmproj
+*.tmproject
+tmtags
+
+b
+.test_queue_stats
+
+*.rbc
+./.bundle/
+vendor/ruby
+log/*.log
+.rake_t_cache
+
+#packing-only formats
+*.iso
+
+#package management formats
+*.dmg
+*.xpi
+*.gem
+*.egg
+*.deb
+*.rpm
+
+.DS_Store
+npm-debug.log
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+tmp

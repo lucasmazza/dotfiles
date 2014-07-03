@@ -1,0 +1,10 @@
+#!/bin/bash
+# https://gist.github.com/SlexAxton/4989674
+if [[ -n "$1" ]]; then
+  ffmpeg -i $1 -r 10 -vcodec png out-static-%05d.png
+  time convert -verbose +dither -layers Optimize -resize 600x600\> out-static*.png  GIF:- | gifsicle --colors 128 --delay=1 --loop --optimize=3 --multifile - > $1.gif
+  rm out-static*.png
+else
+  echo "Usage: $(basename $0) MOVIE.mov"
+  exit 1
+fi

@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+# usage rconsole [FILE] [FILE] ...
+#
+# An IRB session on flavoured steroids:
+#
+# * RACK_ENV defaults to 'development';
+# * Adds the current folder and 'lib' to the load path;
+# * Bundler setup if a Gemfile is present;
+# * Attempts to require a file named 'app.rb', 'application.rb' or 'boot.rb',
+#    or a file inside 'lib' with the same name of the current folder
+#    (lib/foo.rb if you're on the foo directory);
+# * Requires any other given files.
+
+require 'rubygems'
+gemfile = File.exist?('Gemfile')
+dirname = File.basename(Dir.pwd)
+files   = %W(app application boot lib/#{dirname})
+app     = files.find { |f| File.exist?("#{f}.rb") }
+
+ENV['RACK_ENV'] ||= 'development'
+
+$LOAD_PATH << Dir.pwd
+$LOAD_PATH << File.join(Dir.pwd, 'lib')
+
+if gemfile
+  puts 'Loading Bundler...'
+  require 'bundler/setup'
+end
+
+if app
+  puts "Loading #{app}..."
+  require app
+end
+
+ARGV.each { |file| require file }
+ARGV.clear
+
+require 'irb'
+puts "Loaded #{ENV['RACK_ENV']} environment with Ruby #{RUBY_VERSION}."
+IRB.start

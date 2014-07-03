@@ -1,0 +1,17 @@
+#!/bin/bash
+# Usage: bunpdate [ARGS]
+#
+# Executes 'bundle update' with the given arguments with the current './Gemfile'
+# and all gemfiles in the './gemfiles' directory.
+
+set -e
+
+__bunpdate__() {
+  echo -e "\033[37mUpdating \033[0;31m$1\033[37m..."
+  BUNDLE_GEMFILE=$1 bundle update $2 --quiet
+}
+
+__bunpdate__ 'Gemfile' "$*"
+for gemfile in `ls gemfiles/Gemfile* | grep -v 'lock$'`; do
+  __bunpdate__ $gemfile "$*"
+done

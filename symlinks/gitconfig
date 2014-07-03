@@ -1,0 +1,64 @@
+[credential]
+  helper = /opt/boxen/bin/boxen-git-credential
+
+[hub]
+  protocol = https
+
+[core]
+	excludesfile = ~/.gitignore
+  whitespace = trailing-space,space-before-tab
+  autocrlf = input
+
+[apply]
+  whitespace = fix
+
+[color]
+  ui = true
+  interactive = true
+  status = true
+  branch = true
+  diff = true
+
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  br = branch
+  ls = branch
+  s  = status
+  a  = add
+  b  = branch
+  d  = diff
+  dc = diff --cached
+  v  = show
+  l  = log --pretty=oneline
+  ll = log
+  cp = cherry-pick
+  c  = checkout
+  cc = commit
+  ri = rebase -i HEAD~10
+  sh = !git-sh
+  ro = !git fetch origin && git reset --hard origin/master
+  rank = shortlog -sn
+  ptec = config user.email lucas.mazza@plataformatec.com.br
+  ignore = config --global core.excludesfile ~/.gitignore
+  fix = commit --amend -C HEAD
+
+[user]
+  email = lucastmazza@gmail.com
+  name = Lucas Mazza
+
+[push]
+  default = simple
+
+[heroku]
+  account = personal
+
+[merge]
+	ff = false
+
+[pull]
+	rebase = true
+
+[branch]
+  autosetuprebase = always

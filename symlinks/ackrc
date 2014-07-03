@@ -1,0 +1,17 @@
+--type-add
+ruby=haml,rabl,erb,rake,lock
+--type-set
+coffeescript=.coffee
+--type-add
+js=json,tmpl,jst,ejs
+--type-add
+css=scss,sass,styl
+--type-set
+elixir=ex,exs
+--type-set
+markdown=md,markdown
+--ignore-dir=vendor/ruby
+--ignore-dir=pkg/
+--ignore-dir=tmp/
+--ignore-dir=log/
+--ignore-dir=node_modules
