@@ -24,4 +24,4 @@ function identifier() {
   fi
 }
 
-export PS1="\`identifier\` \w | \`current_ruby\` \`git_branch\` \`linebreak\`"
+export PS1="\`identifier\`  \w | \`current_ruby\` \`git_branch\` \`linebreak\`"
