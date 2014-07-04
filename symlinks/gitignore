@@ -10,6 +10,7 @@ b
 vendor/ruby
 log/*.log
 .rake_t_cache
+node_modules
 
 #packing-only formats
 *.iso
