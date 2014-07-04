@@ -1,0 +1,28 @@
+#!/bin/bash
+# USAGE: gifit [MOVIE]
+#
+# This program will convert the .mov MOVIE file into a gif with the same name,
+# copy it over to ~/Dropbox/Public/gifs and copy the Dropbox public URL for the
+# gif to your clipboard.The gif conversion commands are extracted from
+# https://gist.github.com/SlexAxton/4989674
+
+if [[ ! -f "$1" ]]; then
+  echo "Usage: $(basename $0) MOVIE.mov"
+  exit 1
+fi
+
+MOVIE="$1"
+GIF=${MOVIE/.mov/.gif}
+
+ffmpeg -i $MOVIE -r 10 -vcodec png out-static-%05d.png 2> /dev/null
+convert -verbose +dither -layers Optimize -resize 600x600\> out-static*.png  GIF:-  2> /dev/null | gifsicle --colors 128 --delay=1 --loop --optimize=3 --multifile - > $GIF
+rm out-static*.png
+
+echo "🎥 '$(basename $GIF)' created."
+
+if [[ -n "$DROPBOX_USER_ID" ]]; then
+  mkdir -p ~/Dropbox/Public/gifs
+  mv $GIF ~/Dropbox/Public/gifs
+  echo "https://dl.dropboxusercontent.com/u/$DROPBOX_USER_ID/gifs/$(basename $GIF)" | pbcopy
+  echo "👉 Public Dropbox URL for '$(basename $GIF)' copied to your clipboard."
+fi
