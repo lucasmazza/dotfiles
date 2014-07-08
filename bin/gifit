@@ -25,6 +25,6 @@ echo "🎥 '$(basename $GIF)' created."
 if [[ -n "$DROPBOX_USER_ID" ]]; then
   mkdir -p ~/Dropbox/Public/gifs
   mv $GIF ~/Dropbox/Public/gifs
-  echo "https://dl.dropboxusercontent.com/u/$DROPBOX_USER_ID/gifs/$(basename $GIF)" | pbcopy
+  echo -n "https://dl.dropboxusercontent.com/u/$DROPBOX_USER_ID/gifs/$(basename $GIF)" | pbcopy
   echo "👉 Public Dropbox URL for '$(basename $GIF)' copied to your clipboard."
 fi
