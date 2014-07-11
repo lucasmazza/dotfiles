@@ -9,11 +9,9 @@ IRB.conf[:PROMPT_MODE]  = :SIMPLE
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:USE_READLINE] = true
 
-def clear
-  system 'clear'
-  if ENV['RAILS_ENV']
-    return "Rails environment: #{ENV['RAILS_ENV']}"
-  end
+def copy(data)
+  File.popen('pbcopy', 'w') { |p| p << data.to_s }
+  $?.success?
 end
 
 def count_queries
