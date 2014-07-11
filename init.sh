@@ -1,11 +1,11 @@
-source /opt/boxen/env.sh
+test -f /opt/boxen/env.sh && source /opt/boxen/env.sh
 
 shopt -s globstar
 ROOT="$(dirname "${BASH_SOURCE[0]}")"
 
-# Bash Completion (install bash-completion with homebrew to enable it
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
+completion="$(brew --prefix)/etc/bash_completion"
+if [ -f $completion ]; then
+  . $completion
 fi
 
 export PATH="$HOME/bin:$ROOT/bin:$PATH"
