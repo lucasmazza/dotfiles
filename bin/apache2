@@ -9,7 +9,7 @@
 
 if [[ -s $PWD/LICENSE ]]
 then
-  echo "'LICENSE' file exists bro."
+  echo "'LICENSE' file exists."
   exit 1
 else
   name=$(git config user.name)
