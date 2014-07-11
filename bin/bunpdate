@@ -7,11 +7,11 @@
 set -e
 
 __bunpdate__() {
-  echo -e "\033[37mUpdating \033[0;31m$1\033[37m..."
+  echo -e "💎 \033[37mUpdating \033[0;31m$1\033[37m..."
   BUNDLE_GEMFILE=$1 bundle update $2 --quiet
 }
 
 __bunpdate__ 'Gemfile' "$*"
-for gemfile in `ls gemfiles/Gemfile* | grep -v 'lock$'`; do
+for gemfile in $(ls gemfiles/Gemfile* 2>/dev/null | grep -v 'lock$'); do
   __bunpdate__ $gemfile "$*"
 done
