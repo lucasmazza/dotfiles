@@ -1,15 +1,15 @@
 function current_ruby() {
-  echo -ne '\033[0;31m'
+  echo -ne '\033[1;31m'
   echo -n $(rbenv version-name)
 }
 
 function git_branch() {
-   echo -ne '\033[0;33m'
+   echo -ne '\033[1;33m'
    echo -n $(__git_ps1)
 }
 
 function linebreak() {
-  echo -e '\033[37m'
+  echo -e '\033[00m'
   echo -n '$ '
 }
 
