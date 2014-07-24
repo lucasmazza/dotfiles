@@ -10,8 +10,9 @@ css=scss,sass,styl
 elixir=ex,exs
 --type-set
 markdown=md,markdown
---ignore-dir=vendor/ruby
---ignore-dir=pkg/
---ignore-dir=tmp/
+--ignore-dir=_site
 --ignore-dir=log/
 --ignore-dir=node_modules
+--ignore-dir=pkg/
+--ignore-dir=tmp/
+--ignore-dir=vendor/ruby
