@@ -7,7 +7,7 @@
 set -e
 
 __bunpdate__() {
-  echo -e "💎 \033[37mUpdating \033[0;31m$1\033[37m..."
+  echo -e "💎 \033[00mUpdating \033[0;31m$1\033[00m..."
   BUNDLE_GEMFILE=$1 bundle update $2 --quiet
 }
 
