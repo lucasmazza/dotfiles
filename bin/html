@@ -1,4 +1,6 @@
 #!/bin/bash
+# USAGE: html [path/to/project]
+#
 # Creates a new HTML project based on https://github.com/lucasmazza/html
 if [ $# -lt 1 ]
 then
