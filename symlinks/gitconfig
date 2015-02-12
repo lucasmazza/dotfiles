@@ -8,6 +8,7 @@
 	excludesfile = ~/.gitignore
   whitespace = trailing-space,space-before-tab
   autocrlf = input
+  pager = less -+$LESS -RS
 
 [apply]
   whitespace = fix
@@ -20,29 +21,19 @@
   diff = true
 
 [alias]
-  st = status
+  aliases = config --get-regexp alias
   ci = commit
   co = checkout
-  br = branch
-  ls = branch
   s  = status
   a  = add
-  b  = branch
   d  = diff
   dc = diff --cached
-  v  = show
-  l  = log --pretty=oneline
-  ll = log
-  cp = cherry-pick
-  c  = checkout
-  cc = commit
-  ri = rebase -i HEAD~10
-  sh = !git-sh
-  ro = !git fetch origin && git reset --hard origin/master
-  rank = shortlog -sn
+  rank = shortlog -sn --no-merges
   ptec = config user.email lucas.mazza@plataformatec.com.br
-  ignore = config --global core.excludesfile ~/.gitignore
   fix = commit --amend -C HEAD
+  save = !git add -A && git commit -m wip
+  edit = reset --soft HEAD^
+  m = merge --no-edit
 
 [user]
   email = lucastmazza@gmail.com
