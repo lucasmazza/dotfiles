@@ -6,7 +6,8 @@ b
 .test_queue_stats
 
 *.rbc
-./.bundle/
+.bundle
+coverage
 vendor/ruby
 log/*.log
 .rake_t_cache
