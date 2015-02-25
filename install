@@ -2,7 +2,7 @@
 
 for file in $(find symlinks -type f -maxdepth 1); do
   dotfile=${file/symlinks\//.}
-  echo -e "\033[37mInstalling \033[0;31m~/$dotfile\033[37m..."
+  echo -e "  Installing $dotfile..."
 
   ln -sf "$PWD/$file" "$HOME/$dotfile"
 done
