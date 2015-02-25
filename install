@@ -1,16 +1,43 @@
 #!/bin/bash
+__dir__="$(cd $(dirname "${BASH_SOURCE[0]}"); pwd)"
 
-for file in $(find symlinks -type f -maxdepth 1); do
-  dotfile=${file/symlinks\//.}
-  echo -e "  Installing $dotfile..."
+link_files() {
+  local root=$1;
+  local destination=$2;
 
-  ln -sf "$PWD/$file" "$HOME/$dotfile"
-done
+  if [ ! -d "$root/symlinks" ]; then
+    return 1
+  fi
 
-root="$(dirname "${BASH_SOURCE[0]}")"
-path="$root/init.sh"
-profile="$HOME/.profile"
-grep -q "$path" $profile || (echo "Loading 'init.sh' on your '.profile'." && echo -e "\nsource $path" >> $profile)
+  for file in $(find $root/symlinks -type f -maxdepth 2); do
+    dotfile=${file/$root\/symlinks\//.}
+    echo "🔗  Linking '$dotfile'..."
 
-source $profile
-echo "Done!"
+    mkdir -p $(dirname "$destination/$dotfile")
+    ln -sf $file "$destination/$dotfile"
+  done
+}
+
+inject_init() {
+  local init="$root/init.sh"
+  local profile="$HOME/.profile"
+
+  touch $profile
+
+  if [ -n $(grep -q "$init" $profile) ]; then
+    echo "👉 Loading 'init.sh' on  your '~/.profile'..."
+    echo -e "source $init\n" >> $profile
+  fi
+}
+
+create_directories() {
+  mkdir -p $HOME/src/{me,oss,work,heroku}
+  echo "👉 Creating directories on '~/src'..."
+}
+
+link_files $__dir__ $HOME
+link_files "$HOME/Copy" $HOME
+inject_init
+create_directories
+
+echo "🎉  Done!"
