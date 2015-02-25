@@ -1,0 +1,11 @@
+#!/bin/bash -e
+
+boomfile="$HOME/Dropbox/boom"
+if [[ -s $boomfile ]]; then
+  ln -sf $boomfile "$HOME/.boom"
+fi
+
+mkdir -p $HOME/code/personal
+mkdir -p $HOME/code/github
+mkdir -p $HOME/code/heroku
+mkdir -p $HOME/code/ptec
