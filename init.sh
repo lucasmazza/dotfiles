@@ -1,4 +1,5 @@
 test -f /opt/boxen/env.sh && source /opt/boxen/env.sh
+eval "$(hub alias -s)"
 
 ROOT="$(dirname "${BASH_SOURCE[0]}")"
 
