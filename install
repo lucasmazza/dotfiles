@@ -3,7 +3,7 @@ __dir__="$(cd $(dirname "${BASH_SOURCE[0]}"); pwd)"
 
 link_files() {
   local root=$1;
-  local destination=$2;
+  local destination=$HOME;
 
   if [ ! -d "$root/symlinks" ]; then
     return 1
@@ -19,14 +19,14 @@ link_files() {
 }
 
 inject_init() {
-  local init="$root/init.sh"
+  local init="$__dir__/init.sh"
   local profile="$HOME/.profile"
 
   touch $profile
 
   if [ -n $(grep -q "$init" $profile) ]; then
     echo "👉 Loading 'init.sh' on  your '~/.profile'..."
-    echo -e "source $init\n" >> $profile
+    echo -e "test -f $init && source $init\n" >> $profile
   fi
 }
 
@@ -35,8 +35,8 @@ create_directories() {
   echo "👉 Creating directories on '~/src'..."
 }
 
-link_files $__dir__ $HOME
-link_files "$HOME/Copy" $HOME
+link_files $__dir__
+link_files "$HOME/Copy"
 inject_init
 create_directories
 
