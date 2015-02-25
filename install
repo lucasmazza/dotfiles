@@ -24,9 +24,9 @@ inject_init() {
 
   touch $profile
 
-  if [ -n $(grep -q "$init" $profile) ]; then
+  if ! grep -q "lucasmazza/dotfiles" $profile; then
     echo "👉 Loading 'init.sh' on  your '~/.profile'..."
-    echo -e "test -f $init && source $init\n" >> $profile
+    echo -e "# Added by lucasmazza/dotfiles\ntest -f $init && source $init\n" >> $profile
   fi
 }
 
