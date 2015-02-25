@@ -7,4 +7,9 @@ for file in $(find symlinks -type f -maxdepth 1); do
   ln -sf "$PWD/$file" "$HOME/$dotfile"
 done
 
-echo "Done! Now please load '$PWD/init.sh' in your shell."
+path="$PWD/init.sh"
+profile="$HOME/.profile"
+grep -q "$path" $profile || (echo "Loading 'init.sh' on your '.profile'." && echo -e "\nsource $path" >> $profile)
+
+source $profile
+echo "Done!"
