@@ -1,20 +1,17 @@
 test -f /opt/boxen/env.sh && source /opt/boxen/env.sh
 eval "$(hub alias -s)"
 
-ROOT="$(dirname "${BASH_SOURCE[0]}")"
+root="$(cd $(dirname "${BASH_SOURCE[0]}"); pwd)"
 
 completion="$(brew --prefix)/etc/bash_completion"
 if [ -f $completion ]; then
   . $completion
 fi
 
-export PATH="$HOME/bin:$ROOT/bin:$PATH"
+export PATH="$HOME/bin:$root/bin:$PATH"
 export EDITOR="atom -w -n"
-
-export BUNDLE_JOBS=1
-
 export ATOM_REPOS_HOME="$HOME/code/github"
 
 test -f ~/.secrets.sh && source ~/.secrets.sh
-source $ROOT/scripts/prompt.sh
-source $ROOT/scripts/aliases.sh
+source $root/scripts/prompt.sh
+source $root/scripts/aliases.sh
