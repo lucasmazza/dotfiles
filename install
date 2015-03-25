@@ -36,7 +36,7 @@ create_directories() {
 }
 
 link_files $__dir__
-link_files "$HOME/Copy"
+link_files "$HOME/Dropbox"
 inject_init
 create_directories
 
