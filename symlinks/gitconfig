@@ -32,7 +32,7 @@
   ptec = config user.email lucas.mazza@plataformatec.com.br
   fix = commit --amend -C HEAD
   save = !git add -A && git commit -m wip
-  edit = reset --soft HEAD^
+  undo = reset --soft HEAD^
   m = merge --no-edit
 
 [user]
