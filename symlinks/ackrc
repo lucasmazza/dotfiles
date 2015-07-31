@@ -16,3 +16,4 @@ markdown=md,markdown
 --ignore-dir=pkg/
 --ignore-dir=tmp/
 --ignore-dir=vendor/ruby
+--ignore-dir=.bundle
