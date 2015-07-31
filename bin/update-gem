@@ -7,7 +7,12 @@ then
   exit 1
 fi
 
-bundle update $1
-bin/rspec
+bundle update $1 --quiet
+if [[ -f bin/rspec ]]; then
+  bin/rspec
+elif [[ -f bin/rake ]]; then
+  bin/rake
+fi
+
 git add Gemfile.lock
 git commit -m "Update $1 dependency."
