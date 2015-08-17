@@ -11,9 +11,9 @@
   },
 
   "rules": {
-    "quotes": "single",
-    "comma-dangle": "never",
-    "indent": [2, 2],
+    "quotes": [2, "single"],
+    "comma-dangle": [2, "never"],
+    "indent": [2, 2, { "VariableDeclarator": 2}],
     "camelcase": 2,
     "no-multi-spaces": 0,
     "no-shadow": 2,
