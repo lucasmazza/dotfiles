@@ -11,7 +11,7 @@ bundle update $1 --quiet
 if [[ -f bin/rspec ]]; then
   bin/rspec
 elif [[ -f bin/rake ]]; then
-  bin/rake
+  bin/rake test
 fi
 
 git add Gemfile.lock
