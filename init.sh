@@ -12,6 +12,11 @@ for path in $HOME/src/*; do
   export CDPATH="$CDPATH:$path"
 done
 
+for path in $HOME/src/private/*; do
+  export CDPATH="$CDPATH:$path"
+done
+
+
 export PATH="$HOME/bin:$root/bin:$PATH"
 export EDITOR="atom -w -n"
 export ATOM_REPOS_HOME="$HOME/code/github"
