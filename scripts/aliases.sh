@@ -13,4 +13,4 @@ alias desktopoff='defaults write com.apple.finder CreateDesktop -bool false && k
 alias rtest='bundle exec ruby -Ilib:test "$@"'
 alias rserver='ruby -run -e httpd -- -p 9292 .'
 
-headers='curl --head'
+alias pcat='pygmentize -O style=tango -f console256 -g'
