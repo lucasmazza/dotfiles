@@ -14,18 +14,19 @@ if [[ ! -f "$1" ]]; then
 fi
 
 movie="$1"
-gif=${movie/.mov/.gif}
-filename=$(basename $gif)
+path=$(basename $movie)
+filename=${path%.*}
+gif="$filename.gif"
 
 ffmpeg -i $movie -r 10 -vcodec png out-static-%05d.png 2> /dev/null
 convert -verbose +dither -layers Optimize -resize 600x600\> out-static*.png  gif:-  2> /dev/null | gifsicle --colors 128 --delay=1 --loop --optimize=3 --multifile - > $gif
 rm out-static*.png
 
-echo "🎥 '$filename' created."
+echo "🎥 '$gif' created."
 
 if [[ -n "$DROPBOX_USER_ID" ]]; then
   mkdir -p ~/Dropbox/Public/gifs
   mv $gif ~/Dropbox/Public/gifs
-  echo -n "https://dl.dropboxusercontent.com/u/$DROPBOX_USER_ID/gifs/$filename" | pbcopy
-  echo "👉 Public Dropbox URL for '$filename' copied to your clipboard."
+  echo -n "https://dl.dropboxusercontent.com/u/$DROPBOX_USER_ID/gifs/$gif" | pbcopy
+  echo "👉 Public Dropbox URL for '$gif' copied to your clipboard."
 fi
