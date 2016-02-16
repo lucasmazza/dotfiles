@@ -10,6 +10,7 @@ fi
 __update_dependency__() {
   echo -e "💎  \033[00mUpdating \033[0;31m$1\033[00m dependency..."
   bundle update $1 --quiet
+
   if [[ -f bin/rspec ]]; then
     bin/rspec
   elif [[ -f bin/rake ]]; then
