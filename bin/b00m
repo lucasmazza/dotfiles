@@ -21,7 +21,7 @@ File.open(File.expand_path("~/Dropbox/Public/boom/#{destination}"), 'w+b') do |f
   file.puts open(url, 'rb').read
 end
 
-item = Boom::Item.new(name, "https://dl.dropboxusercontent.com/u/#{ENV['DROPBOX_USER_ID']}/#{destination}")
+item = Boom::Item.new(name, "https://dl.dropboxusercontent.com/u/#{ENV['DROPBOX_USER_ID']}/boom/#{destination}")
 
 list.add_item(item)
 Boom.storage.save
