@@ -29,7 +29,7 @@
   d  = diff
   dc = diff --cached
   rank = shortlog -sn --no-merges
-  ptec = config user.email lucas.mazza@plataformatec.com.br
+  ptec = !git config user.email lucas.mazza@plataformatec.com.br && git config user.signingkey BE4A44CB
   fix = commit --amend -C HEAD
   save = !git add -A && git commit -m wip
   undo = reset --soft HEAD^
