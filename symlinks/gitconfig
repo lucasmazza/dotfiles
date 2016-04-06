@@ -38,6 +38,7 @@
 [user]
   email = lucastmazza@gmail.com
   name = Lucas Mazza
+  signingkey = A0ED7A3E
 
 [push]
   default = simple
@@ -53,3 +54,5 @@
 
 [branch]
   autosetuprebase = always
+[commit]
+  gpgsign = true
