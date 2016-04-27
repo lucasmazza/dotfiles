@@ -4,6 +4,7 @@ tmtags
 
 b
 .test_queue_stats
+.jekyll-metadata
 
 *.rbc
 .bundle
