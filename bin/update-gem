@@ -11,7 +11,9 @@ __update_dependency__() {
   echo -e "💎  \033[00mUpdating \033[0;31m$1\033[00m dependency..."
   bundle update $1 --quiet
 
-  if [[ -f bin/rspec ]]; then
+  if [ $(grep 'railties (5' Gemfile.lock -q; echo $?) -eq 0 ]; then
+    bin/rails test
+  elif [[ -f bin/rspec ]]; then
     bin/rspec
   elif [[ -f bin/rake ]]; then
     bin/rake test
