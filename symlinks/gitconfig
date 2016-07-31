@@ -56,3 +56,5 @@
   autosetuprebase = always
 [commit]
   gpgsign = true
+[rebase]
+	autosquash = true
