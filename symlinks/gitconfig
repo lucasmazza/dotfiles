@@ -34,6 +34,7 @@
   save = !git add -A && git commit -m wip
   undo = reset --soft HEAD^
   m = merge --no-edit
+  autorebase=!GIT_SEQUENCE_EDITOR=touch git rebase --interactive --autosquash
 
 [user]
   email = lucastmazza@gmail.com
