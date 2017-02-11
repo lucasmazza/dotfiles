@@ -1,5 +1,5 @@
 [credential]
-  helper = /opt/boxen/bin/boxen-git-credential
+	helper = osxkeychain
 
 [hub]
   protocol = https
@@ -59,3 +59,5 @@
   gpgsign = true
 [rebase]
 	autosquash = true
+[github]
+	user = lucasmazza
