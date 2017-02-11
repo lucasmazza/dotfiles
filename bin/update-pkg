@@ -1,0 +1,36 @@
+#!/bin/bash
+# Usage: update-pkg $PACKAGE
+set -e
+if [ $# -lt 1 ]
+then
+  echo "Usage: $(basename $0) GEMS..."
+  exit 1
+fi
+
+__update_dependency__() {
+  echo -e "💎  \033[00mUpdating \033[0;31m$1\033[00m package..."
+  yarn upgrade $1
+
+  npm test
+
+  if [ $? -eq 0 ]; then
+    __commit__ $1
+  else
+    __fail__ $1
+  fi
+}
+
+__fail__() {
+  echo -e "💣  \033[00mthe test suite fails after 'yarn upgrade $1' \033[0;31m"
+  git checkout yarn.lock package.json
+  exit 1
+}
+
+__commit__() {
+  git add yarn.lock package.json
+  git commit -m "Update \`$1\` dependency." --quiet
+}
+
+for dependency in "$@"; do
+  __update_dependency__ $dependency
+done
