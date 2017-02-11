@@ -1,5 +1,7 @@
 test -f /opt/boxen/env.sh && source /opt/boxen/env.sh
 eval "$(hub alias -s)"
+eval "$(rbenv init -)"
+eval "$(nodenv init -)"
 
 root="$(cd $(dirname "${BASH_SOURCE[0]}"); pwd)"
 
@@ -19,7 +21,7 @@ done
 
 export PATH="$HOME/bin:$root/bin:$PATH"
 export EDITOR="atom -w -n"
-export ATOM_REPOS_HOME="$HOME/code/github"
+export ATOM_REPOS_HOME="$HOME/src/github"
 
 test -f ~/.secrets.sh && source ~/.secrets.sh
 source $root/scripts/prompt.sh
