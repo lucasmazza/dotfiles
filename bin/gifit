@@ -13,7 +13,7 @@ output() {
 }
 
 if [[ ! -f "$1" ]]; then
-  echo "Usage: $(basename $0) MOVIE.mov"
+  echo "Usage: $(basename $0) MOVIE.mov [--share]"
   exit 1
 fi
 
@@ -28,7 +28,7 @@ rm out-static*.png
 
 output "🎥 '$gif' created."
 
-if $(command -v dropbox_uploader.sh &>/dev/null); then
+if $(command -v dropbox_uploader.sh &>/dev/null) && [ $2 == "--share" ]; then
   dropbox_uploader.sh upload "$gif" "Public/gifs/$gif"
   dropbox_uploader.sh share "Public/gifs/$gif" | sed -e 's/> Share link: //' | pbcopy
   output "👉 Shareable Dropbox URL for '$gif' copied to your clipboard."
