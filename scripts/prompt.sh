@@ -14,8 +14,8 @@ function linebreak() {
 }
 
 function identifier() {
-  local work=$(git config user.email | grep plataformatec)
-  if [[ -z $work ]]; then
+  local personal=$(git config user.email | grep gmail)
+  if [[ -n $personal ]]; then
     # :zap:
     echo -n '⚡'
   else
