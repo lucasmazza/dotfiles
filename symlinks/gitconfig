@@ -1,11 +1,11 @@
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 
 [hub]
   protocol = https
 
 [core]
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
   whitespace = trailing-space,space-before-tab
   autocrlf = input
   pager = less -+$LESS -RS
@@ -48,16 +48,22 @@
   account = personal
 
 [merge]
-	ff = false
+  ff = false
 
 [pull]
-	rebase = true
+  rebase = true
 
 [branch]
   autosetuprebase = always
+
 [commit]
   gpgsign = true
+
 [rebase]
-	autosquash = true
+  autosquash = true
+
 [github]
-	user = lucasmazza
+  user = lucasmazza
+
+[gpg]
+  program = /usr/local/bin/gpg
