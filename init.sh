@@ -20,7 +20,7 @@ for path in $HOME/src/private/*; do
 done
 
 
-export PATH="$HOME/bin:$root/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.bin:$root/bin:$PATH"
 export EDITOR="atom -w -n"
 export ATOM_REPOS_HOME="$HOME/src/github"
 
