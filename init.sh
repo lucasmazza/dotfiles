@@ -2,7 +2,6 @@ test -f /opt/boxen/env.sh && source /opt/boxen/env.sh
 eval "$(hub alias -s)"
 eval "$(rbenv init -)"
 eval "$(nodenv init -)"
-eval "$(docker-machine env)"
 
 root="$(cd $(dirname "${BASH_SOURCE[0]}"); pwd)"
 
