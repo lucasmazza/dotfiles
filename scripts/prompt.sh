@@ -1,11 +1,18 @@
 function current_ruby() {
-  echo -ne '\033[1;31m'
-  echo -n $(rbenv version-name)
+  if [[ -f Gemfile || -f .ruby-version || -f gems.rb ]]; then
+    echo -ne '\033[1;31m'
+    echo -n $(rbenv version-name)
+    echo -n ' '
+  fi
 }
 
 function git_branch() {
-   echo -ne '\033[1;33m'
-   echo -n $(__git_ps1)
+  echo -ne '\033[1;33m'
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    echo -n $(__git_ps1)
+  else
+    echo -n "(untracked)"
+  fi
 }
 
 function linebreak() {
@@ -24,4 +31,4 @@ function identifier() {
   fi
 }
 
-export PS1="\`identifier\`  \w | \`current_ruby\` \`git_branch\` \`linebreak\`"
+export PS1="\`identifier\`  \w | \`current_ruby\`\`git_branch\` \`linebreak\`"
