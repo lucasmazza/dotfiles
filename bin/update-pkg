@@ -11,7 +11,7 @@ __update_dependency__() {
   echo -e "💎  \033[00mUpdating \033[0;31m$1\033[00m package..."
   yarn upgrade $1
 
-  npm test
+  CI=true yarn test
 
   if [ $? -eq 0 ]; then
     __commit__ $1
