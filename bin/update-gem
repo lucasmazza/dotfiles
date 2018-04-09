@@ -34,7 +34,7 @@ __fail__() {
 
 __commit__() {
   git add Gemfile.lock
-  git commit -m "Update \`$1\` dependency." --quiet
+  git commit -m "Update \`$1\` dependency" --quiet
 }
 
 for gem in "$@"; do

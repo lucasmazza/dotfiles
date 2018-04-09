@@ -28,7 +28,7 @@ __fail__() {
 
 __commit__() {
   git add yarn.lock package.json
-  git commit -m "Update \`$1\` dependency." --quiet
+  git commit -m "Update \`$1\` dependency" --quiet
 }
 
 for dependency in "$@"; do
