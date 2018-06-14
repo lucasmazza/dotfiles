@@ -1,0 +1,4 @@
+#!/bin/bash
+npx yarn-tools fix-duplicates yarn.lock > yarn.lock.fixed \
+  && mv yarn.lock.fixed yarn.lock \
+  && yarn install
