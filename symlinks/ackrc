@@ -18,3 +18,4 @@ markdown=md,markdown
 --ignore-dir=tmp/
 --ignore-dir=vendor
 --ignore-dir=webpack
+--ignore-dir=deps
