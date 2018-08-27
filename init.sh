@@ -5,10 +5,8 @@ eval "$(nodenv init -)"
 
 root="$(cd $(dirname "${BASH_SOURCE[0]}"); pwd)"
 
-completion="$(brew --prefix)/etc/bash_completion"
-if [ -f $completion ]; then
-  . $completion
-fi
+test -f $(brew --prefix)/etc/bash_completion && . $(brew --prefix)/etc/bash_completion
+test -f ~/.fzf.bash && source ~/.fzf.bash
 
 for path in $HOME/src/*; do
   export CDPATH="$CDPATH:$path"
