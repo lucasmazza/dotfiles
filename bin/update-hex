@@ -9,7 +9,8 @@ fi
 
 __update_dependency__() {
   echo -e "🧪  \033[00mUpdating \033[0;31m$1\033[00m dependency..."
-  mix deps.update $1 --quiet
+  mix deps.unlock $1 --quiet && \
+    mix deps.update $1 --target --quiet
 
   mix test
 
