@@ -22,12 +22,7 @@
 
 [alias]
   aliases = config --get-regexp alias
-  ci = commit
-  co = checkout
-  s  = status
-  a  = add
-  d  = diff
-  dc = diff --cached
+  s  = switch
   rank = shortlog -sn --no-merges
   fix = commit --amend -C HEAD
   save = !git add -A && git commit -m wip
