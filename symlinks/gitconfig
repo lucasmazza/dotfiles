@@ -29,6 +29,7 @@
   undo = reset --soft HEAD^
   m = merge --no-edit
   autorebase=!GIT_SEQUENCE_EDITOR=touch git rebase --interactive --autosquash
+  tidy="!git remote prune origin; git branch --merged master --no-color | grep -v master | xargs git branch -d"
 
 [user]
   email = lucastmazza@gmail.com
