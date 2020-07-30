@@ -1,4 +1,4 @@
-alias reload='source ~/.profile'
+alias reload='source ~/.bash_profile'
 alias ls='ls -AlhF'
 
 alias squid='squid -N -d 1'
