@@ -9,6 +9,7 @@
   whitespace = trailing-space,space-before-tab
   autocrlf = input
   pager = less -+$LESS -RS
+  attributesfile = /Users/lucas/.gitattributes
 
 [apply]
   whitespace = fix
