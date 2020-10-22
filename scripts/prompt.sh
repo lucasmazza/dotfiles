@@ -21,7 +21,7 @@ function linebreak() {
 }
 
 function identifier() {
-  local personal=$(git config user.email | grep gmail)
+  local personal=$(git config user.email | grep hey)
   if [[ -n $personal ]]; then
     # :zap:
     echo -n '⚡'
