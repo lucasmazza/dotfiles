@@ -32,9 +32,9 @@
   tidy="!git remote prune origin; git branch --merged master --no-color | grep -v master | xargs git branch -d"
 
 [user]
-  email = lucastmazza@gmail.com
+  email = lucasmazza@hey.com
   name = Lucas Mazza
-  signingkey = A0ED7A3E
+  signingkey = DBA1CF99FB064E5C
 
 [push]
   default = simple
