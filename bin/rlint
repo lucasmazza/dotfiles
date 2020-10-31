@@ -1,8 +1,0 @@
-#!/bin/bash
-# Usage: rlint
-#
-# Checks for warnings in ruby (.rb) files inside a Rails application.
-
-for file in $(ls -1 {app,lib,spec,test}/**/*.rb 2>/dev/null); do
-  ruby -wc $file 1> /dev/null
-done
