@@ -1,0 +1,23 @@
+format = "${custom.emoji}$directory$elixir$ruby$git_branch$git_state$line_break$character"
+
+[custom.emoji]
+command = "if [ -n $(git config user.email | grep hey) ]; then echo -n '⚡'; else echo -n '🏢'; fi"
+files = [".gitignore", ".DS_Store"]
+
+[character]
+success_symbol = '\$'
+error_symbol = '[\$](bold red)'
+[directory]
+format = "$path "
+truncate_to_repo = false
+
+[git_branch]
+format = '[\($branch\)]($style)'
+style = "bold yellow"
+
+[elixir]
+format = "| [$version]($style) "
+style = "bold fg:54"
+
+[ruby]
+format = "| [$version]($style) "

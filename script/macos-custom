@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Save screenshots in ~/Pictures/Screenshots folder
+mkdir -p $HOME/Desktop/Screenshots
+defaults write com.apple.screencapture location -string "$HOME/Desktop/Screenshots"
+
+# Check for software updates daily, not just once per week
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false

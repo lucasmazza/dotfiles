@@ -1,5 +1,5 @@
 #!/bin/bash
-__dir__="$(cd $(dirname "${BASH_SOURCE[0]}"); pwd)"
+__dir__="$(git rev-parse --absolute-git-dir | sed 's/\/.git//')"
 
 link_files() {
   local root=$1;
@@ -10,11 +10,12 @@ link_files() {
   fi
 
   for file in $(find $root/symlinks -type f -maxdepth 2); do
-    dotfile=${file/$root\/symlinks\//.}
-    echo "🔗  Linking '$dotfile'..."
+    filename=${file/$root\/symlinks\//.}
+    src=${file/$HOME/"~"}
+    echo "🔗  Linking '$src'..."
 
-    mkdir -p $(dirname "$destination/$dotfile")
-    ln -sf $file "$destination/$dotfile"
+    mkdir -p $(dirname "$destination/$filename")
+    ln -sf $file "$destination/$filename"
   done
 }
 
@@ -39,5 +40,7 @@ link_files $__dir__
 link_files "$HOME/Dropbox"
 inject_init
 create_directories
+
+. $__dir__/script/macos-custom
 
 echo "🎉  Done!"
