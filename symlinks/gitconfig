@@ -64,7 +64,7 @@
 [gpg]
   program = /usr/local/bin/gpg
 [protocol]
-	version = 2
+  version = 2
 
 [includeIf "gitdir:~/src/work/"]
-	path = ~/.gitconfig.work
+  path = ~/.gitconfig.work
