@@ -5,19 +5,18 @@ command = "if [ -n $(git config user.email | grep hey) ]; then echo -n '⚡'; el
 files = [".gitignore", ".DS_Store"]
 
 [character]
-success_symbol = '\$'
-error_symbol = '[\$](bold red)'
+success_symbol = '[\$](fg:#000000)'
+error_symbol = '[\$](bold fg:#d73a49)'
+
 [directory]
-format = "$path "
+format = "[$path](fg:#000000) "
 truncate_to_repo = false
 
 [git_branch]
-format = '[\($branch\)]($style)'
-style = "bold yellow"
+format = '[\($branch\)](bold fg:#dbab09)'
 
 [elixir]
-format = "| [$version]($style) "
-style = "bold fg:54"
+format = "| [$version](bold fg:#6f42c1) "
 
 [ruby]
-format = "| [$version]($style) "
+format = "| [$version](bold fg:#d73a49) "
