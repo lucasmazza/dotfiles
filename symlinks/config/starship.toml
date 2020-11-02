@@ -1,8 +1,12 @@
-format = "${custom.emoji}$directory$elixir$ruby$git_branch$git_state$line_break$character"
+format = "${custom.zap_emoji}${custom.work_emoji}$directory$elixir$ruby$git_branch$git_state$line_break$character"
 
-[custom.emoji]
-command = "if [ -n $(git config user.email | grep hey) ]; then echo -n '⚡'; else echo -n '🏢'; fi"
-files = [".gitignore"]
+[custom.zap_emoji]
+command = "echo ⚡"
+when = """ git config user.email | grep -q "lucasmazza@hey.com" """
+
+[custom.work_emoji]
+command = "echo 🏢"
+when = """ git config user.email | grep -q "lucas@remote.com" """
 
 [character]
 success_symbol = '[\$](fg:#000000)'
