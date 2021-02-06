@@ -31,6 +31,7 @@
   m = merge --no-edit
   autorebase=!GIT_SEQUENCE_EDITOR=touch git rebase --interactive --autosquash
   tidy="!git remote prune origin; git branch --merged master --no-color | grep -v master | xargs git branch -d"
+  master-to-main="!git branch -m master main && git fetch origin && git branch -u origin/main main"
 
 [user]
   email = lucasmazza@hey.com
