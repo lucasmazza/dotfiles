@@ -18,6 +18,8 @@ The [`script/setup`](script/setup) script will:
 ## Utilities
 
 * [`apache2`](bin/apache2)
+* [`ex-fmt`](bin/ex-fmt)
+* [`ex-mktest`](bin/ex-mktest)
 * [`extract`](bin/extract)
 * [`gifit`](bin/gifit)
 * [`loop_this`](bin/loop_this)
