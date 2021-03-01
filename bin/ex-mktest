@@ -1,0 +1,26 @@
+#!/bin/bash
+# Usage: ex-mktest [path/to/file.ex]
+#
+# Generates a test file for an elixir source code file, like:
+#
+#   ex-mktest lib/my_app/users/register_user.ex 
+#   # => test/my_app/users/register_user_test.exs
+source=$1
+
+if [[ ! -f $source ]]; then
+  >&2 echo "$source isn't a file"
+  exit 1
+fi
+
+test=$(echo $source | sed s/^lib/test/ | sed s/\.ex$/_test\.exs/)
+directory=$(dirname $test)
+
+if [[ -f $test ]]; then
+  >&2 echo "$test already exists"
+  exit 1
+fi
+
+mkdir -p $directory
+touch $test
+
+echo $test

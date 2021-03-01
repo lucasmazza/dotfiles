@@ -1,0 +1,9 @@
+#!/bin/bash
+# Usage: ex-fmt
+#
+# Formats any unstaged Elixir source files (`.ex` or `.exs`) using `mix format`.
+ELIXIR_FILES=$(git diff --name-status | awk '$1 != "D" && $2 ~ /\.exs?$/ { print $2 }')
+if [ ! -z "$ELIXIR_FILES" ]
+then
+  mix format $ELIXIR_FILES
+fi
