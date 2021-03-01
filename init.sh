@@ -1,6 +1,6 @@
 eval "$(hub alias -s)"
 eval "$(rbenv init -)"
-eval "$(starship init bash)"
+eval "$(starship init zsh)"
 
 root="$(cd $(dirname "${BASH_SOURCE[0]}"); pwd)"
 

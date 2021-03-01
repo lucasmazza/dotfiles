@@ -20,13 +20,13 @@ link_files() {
 }
 
 inject_init() {
-  local init="$__dir__/init.sh"
-  local profile="$HOME/.bash_profile"
+  local init="$__dir__/init.zsh"
+  local profile="$HOME/.zshrc"
 
   touch $profile
 
   if ! grep -q "lucasmazza/dotfiles" $profile; then
-    echo "👉 Loading 'init.sh' on  your '~/.bash_profile'..."
+    echo "👉 Loading 'init.sh' on  your '~/.zshrc'..."
     echo -e "# Added by lucasmazza/dotfiles\ntest -f $init && source $init\n" >> $profile
   fi
 }
