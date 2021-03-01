@@ -26,7 +26,7 @@ inject_init() {
   touch $profile
 
   if ! grep -q "lucasmazza/dotfiles" $profile; then
-    echo "👉 Loading 'init.sh' on  your '~/.zshrc'..."
+    echo "👉 Loading 'init.zsh' on  your '~/.zshrc'..."
     echo -e "# Added by lucasmazza/dotfiles\ntest -f $init && source $init\n" >> $profile
   fi
 }
