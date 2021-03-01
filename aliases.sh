@@ -1,4 +1,4 @@
-alias reload='source ~/.bash_profile'
+alias reload='source ~/.zshrc'
 alias ls='ls -AlhF'
 
 alias spotlighton='sudo mdutil -a -i on'
