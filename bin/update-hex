@@ -1,5 +1,5 @@
 #!/bin/bash
-# Usage: update-hex $GEM
+# Usage: update-hex $PACKAGE
 set -e
 if [ $# -lt 1 ]
 then

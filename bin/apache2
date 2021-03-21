@@ -5,7 +5,7 @@
 # present.
 # Also grabs your name and e-mail from your git config (using
 # `git config user.name` and `git config user.email`) and adds it as the
-# copywright holder.
+# copyright holder.
 
 if [[ -s $PWD/LICENSE ]]
 then
