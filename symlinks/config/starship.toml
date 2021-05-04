@@ -2,7 +2,7 @@ format = "${custom.zap_emoji}${custom.work_emoji}$directory$elixir$ruby$git_bran
 
 [custom.zap_emoji]
 command = "echo ⚡"
-when = """ git config user.email | grep -q "lucasmazza@hey.com" """
+when = """ git config user.email | grep -q "@lucasmazza.website" """
 
 [custom.work_emoji]
 command = "echo 🏢"

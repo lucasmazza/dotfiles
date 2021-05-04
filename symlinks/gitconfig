@@ -34,9 +34,9 @@
   master-to-main="!git branch -m master main && git fetch origin && git branch -u origin/main main"
 
 [user]
-  email = lucasmazza@hey.com
+  email = git@lucasmazza.website
   name = Lucas Mazza
-  signingkey = DBA1CF99FB064E5C
+  signingkey = 03A0B5E0
 
 [push]
   default = simple
