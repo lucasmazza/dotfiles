@@ -12,7 +12,7 @@ The [`script/setup`](script/setup) script will:
 
 * Add symlinks for each file under [`symlinks`](symlinks) to your home directory.
 * Add symlinks for each file under `~/Dropbox/symlinks` to your home directory.
-* Inject the `init.sh` file in your `~/.zshrc`.
+* Inject the `init.zsh` file in your `~/.zshrc`.
 * Create a set of standard directories under `~/src` to organize your git repositories.
 
 ## Utilities
