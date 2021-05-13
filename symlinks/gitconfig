@@ -69,3 +69,5 @@
 
 [includeIf "gitdir:~/src/work/"]
   path = ~/.gitconfig.work
+[pager]
+	branch = false
