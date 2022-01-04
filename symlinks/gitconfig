@@ -27,11 +27,12 @@
   rank = shortlog -sn --no-merges
   fix = commit --amend -C HEAD
   save = !git add -A && git commit -m wip
-  undo = reset --soft HEAD^
+  undo = "!git reset --soft HEAD^ && git restore --staged . && git status"
   m = merge --no-edit
   autorebase=!GIT_SEQUENCE_EDITOR=touch git rebase --interactive --autosquash
   tidy="!git remote prune origin; git branch --merged master --no-color | grep -v master | xargs git branch -d"
   master-to-main="!git branch -m master main && git fetch origin && git branch -u origin/main main"
+  squashy="commit --allow-empty -m 'Force squash on merge'"
 
 [user]
   email = git@lucasmazza.website
