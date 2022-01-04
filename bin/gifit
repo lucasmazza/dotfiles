@@ -23,7 +23,7 @@ filename=${path%.*}
 gif="$filename.gif"
 
 ffmpeg -i $movie -r 10 -vcodec png out-static-%05d.png 2> /dev/null
-convert -verbose +dither -layers Optimize -resize 600x600\> out-static*.png  gif:-  2> /dev/null | gifsicle --colors 128 --delay=1 --loop --optimize=3 --multifile - > $gif
+convert -verbose +dither -layers Optimize -resize 900x900\> out-static*.png  gif:-  2> /dev/null | gifsicle --colors 128 --delay=1 --loop --optimize=3 --multifile - > $gif
 rm out-static*.png
 
 output "🎥 '$gif' created."
