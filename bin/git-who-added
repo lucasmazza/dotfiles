@@ -1,0 +1,13 @@
+#!/bin/bash
+# USAGE: git who-added PATH
+
+if [ $# -lt 1 ]
+then
+  echo "Usage: git who-added PATH"
+  exit 1
+fi
+
+for file in $@; do
+  author=$(git log -n 1 --reverse --format="%aN <%aE>" -- $file)
+  echo "$file - $author"
+done
