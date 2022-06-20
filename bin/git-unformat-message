@@ -1,0 +1,5 @@
+#! /usr/bin/env ruby --disable=gems
+
+message = `git log --format=%B -n 1`
+
+puts message.split("\n").map { |line| line == "" ? "\n\n" : line }.join(" ").gsub("\n\n ", "\n\n")
