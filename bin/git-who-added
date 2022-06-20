@@ -8,6 +8,6 @@ then
 fi
 
 for file in $@; do
-  author=$(git log -n 1 --reverse --format="%aN <%aE>" -- $file)
+  author=$(git log --reverse --format="%aN <%aE>" -- $file  | head -n 1)
   echo "$file - $author"
 done
