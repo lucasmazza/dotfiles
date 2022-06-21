@@ -1,9 +1,11 @@
 #!/bin/bash
-# USAGE: git who-added PATH
+# USAGE: git who-added PATHS
+#
+# Given one or more paths, print out the git author for its first commit.
 
 if [ $# -lt 1 ]
 then
-  echo "Usage: git who-added PATH"
+  echo "Usage: git who-added PATHS"
   exit 1
 fi
 

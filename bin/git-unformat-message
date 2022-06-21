@@ -1,4 +1,7 @@
 #! /usr/bin/env ruby --disable=gems
+# USAGE: git unformat-message
+#
+# Removes line wraps from commit messages to be used on web UI for creating Pull/Merge Requests.
 
 message = `git log --format=%B -n 1`
 
