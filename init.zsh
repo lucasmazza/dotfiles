@@ -1,7 +1,6 @@
 eval "$(brew shellenv)"
-eval "$(hub alias -s)"
-eval "$(rbenv init -)"
 eval "$(starship init zsh)"
+eval "$(hub alias -s)"
 
 root="$(cd $(dirname "${(%):-%N}"); pwd)"
 
