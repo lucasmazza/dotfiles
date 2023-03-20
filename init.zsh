@@ -29,5 +29,5 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 test -f ~/.secrets.sh && source ~/.secrets.sh
 test -f $root/aliases.sh && source $root/aliases.sh
 test -f ~/.fzf.zsh && source ~/.fzf.zsh
-test -f $HOMEBREW_PREFIX/opt/asdf/asdf.sh && source $HOMEBREW_PREFIX/opt/asdf/asdf.sh
+test -f $(brew --prefix asdf)/libexec/asdf.sh && source $(brew --prefix asdf)/libexec/asdf.sh
 
