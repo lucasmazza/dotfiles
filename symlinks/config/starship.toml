@@ -6,7 +6,7 @@ when = """ git config user.email | grep -q "@lucasmazza.website" """
 
 [custom.work_emoji]
 command = "echo 🏢"
-when = """ git config user.email | grep -q "lucas@remote.com" """
+when = """ git config user.email | grep -q "lucas.mazza@tremendous.com" """
 
 [character]
 success_symbol = '[\$](fg:#000000)'
