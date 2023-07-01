@@ -1,4 +1,4 @@
-eval "$(brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 eval "$(hub alias -s)"
 
@@ -23,7 +23,7 @@ export POSTGRES_EXTRA_CONFIGURE_OPTIONS="--with-uuid=e2fs"
 # Enables Elixir/Erlang shell history
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-# Disables brew auto updates when doing `brew install` 
+# Disables brew auto updates when doing `brew install`
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 test -f ~/.secrets.sh && source ~/.secrets.sh
