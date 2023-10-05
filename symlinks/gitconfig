@@ -72,4 +72,6 @@
 [includeIf "gitdir:~/src/work/"]
   path = ~/.gitconfig.work
 [pager]
-	branch = false
+  branch = false
+[advice]
+  pushNonFastForward = false
