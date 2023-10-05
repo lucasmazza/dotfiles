@@ -1,0 +1,26 @@
+#!/bin/bash
+# Usage: rb-mkspec [path/to/file.rb]
+#
+# Generates a spec file for an ruby source code file, like:
+#
+#   rb-mkspec app/services/things/build_things.rb
+#   # => spec/services/things/build_things_spec.rb
+source=$1
+
+if [[ ! -f $source ]]; then
+  >&2 echo "$source isn't a file"
+  exit 1
+fi
+
+test=$(echo $source | sed s/^app/spec/ | sed s/^lib/spec\\/lib/ | sed s/\.rb$/_spec\.rb/)
+directory=$(dirname $test)
+
+if [[ -f $test ]]; then
+  >&2 echo "$test already exists"
+  exit 1
+fi
+
+mkdir -p $directory
+touch $test
+
+echo $test
