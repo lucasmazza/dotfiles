@@ -31,8 +31,10 @@
   m = merge --no-edit
   autorebase=!GIT_SEQUENCE_EDITOR=touch git rebase --interactive --autosquash
   tidy="!git remote prune origin; git branch --merged master --no-color | grep -v master | xargs git branch -d"
+  clear-branches="!git remote prune origin; git branch --no-color | grep -v master | xargs git branch -D"
   master-to-main="!git branch -m master main && git fetch origin && git branch -u origin/main main"
   squashy="commit --allow-empty -m 'Force squash on merge'"
+  full-log="log --pretty=format:\"%h%x09%ad%x09%an%x09%s\" --date=short --full-history -S"
 
 [user]
   email = git@lucasmazza.website
