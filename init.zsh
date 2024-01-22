@@ -1,7 +1,7 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 eval "$(hub alias -s)"
-eval "$(rtx activate zsh)"
+eval "$(mise activate zsh)"
 
 root="$(cd $(dirname "${(%):-%N}"); pwd)"
 
@@ -17,7 +17,7 @@ done
 export PATH="$HOME/bin:$HOME/.bin:$root/bin:$PATH"
 export EDITOR="code -w -n"
 
-# Set `rtx/asdf install` flags for Erlang and Postgres
+# Set `mise/asdf install` flags for Erlang and Postgres
 export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
 export POSTGRES_EXTRA_CONFIGURE_OPTIONS="--with-uuid=e2fs"
 
