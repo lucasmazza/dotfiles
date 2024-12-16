@@ -78,4 +78,4 @@
 [advice]
   pushNonFastForward = false
 [init]
-	defaultBranch = main
+  defaultBranch = main

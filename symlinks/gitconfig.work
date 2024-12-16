@@ -1,3 +1,6 @@
 [user]
   email = lucas.mazza@tremendous.com
   signingkey = 9D3F0D83
+
+[core]
+  editor = "cursor -w -n"
