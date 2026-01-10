@@ -9,7 +9,7 @@ link_files() {
     return 1
   fi
 
-  for file in $(find $root/symlinks -type f -maxdepth 2); do
+  for file in $(find $root/symlinks -type f -maxdepth 3); do
     filename=${file/$root\/symlinks\//.}
     src=${file/$HOME/"~"}
     echo "🔗  Linking '$src'..."
