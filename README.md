@@ -22,7 +22,6 @@ The [`script/setup`](script/setup) script will:
 * [`ex-mktest`](bin/ex-mktest)
 * [`extract`](bin/extract)
 * [`loop_this`](bin/loop_this)
-* [`osxnotify`](bin/osxnotify)
 * [`pullall`](bin/pullall)
 * [`rconsole`](bin/rconsole)
 * [`slackbanner`](bin/slackbanner)
