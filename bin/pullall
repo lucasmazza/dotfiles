@@ -4,21 +4,15 @@
 # Performs 'git pull' on several repositories under the given DIRECTORY.
 set -e
 
-target=${1:-private}
+target=${1:-.}
 root="$HOME/src/$target"
-pattern=$root
 
 if [[ ! -d $root ]]; then
   echo "'$target' is not a directory."
   exit 0
 fi
 
-# Expanding private to private/* to get nested repositories.
-if [[ $target == "private" ]]; then
-  pattern="$root/*"
-fi
-
-for repo in $(ls -d -1 $pattern/*/.git 2>/dev/null); do
+for repo in $(ls -d -1 $root/*/.git 2>/dev/null); do
   dir=${repo/\/.git//}
   name=${dir/$root\//}
   echo "pulling ${name%?}..."
