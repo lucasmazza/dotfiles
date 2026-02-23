@@ -1,9 +1,3 @@
-*.tmproj
-*.tmproject
-tmtags
-
-b
-.test_queue_stats
 .jekyll-metadata
 
 *.rbc
@@ -27,7 +21,6 @@ node_modules
 
 .DS_Store
 npm-debug.log
-.byebug_history
 # Thumbnails
 ._*
 
