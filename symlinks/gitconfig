@@ -42,9 +42,6 @@
   default = simple
   autoSetupRemote = true
 
-[heroku]
-  account = personal
-
 [merge]
   ff = false
 

@@ -33,7 +33,7 @@ inject_init() {
 
 create_directories() {
   echo "👉 Creating directories on '~/src'..."
-  mkdir -p $HOME/src/{me,oss,work,heroku}
+  mkdir -p $HOME/src/{me,oss,work}
 }
 
 link_files $__dir__
