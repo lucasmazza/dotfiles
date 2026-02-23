@@ -1,6 +1,6 @@
 ---
 :benchmark: false
-gem: --no-document --no-ri --no-rdoc -x
+gem: --no-document -x
 :update_sources: true
 :bulk_threshold: 1000
 :verbose: true
