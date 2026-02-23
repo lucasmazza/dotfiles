@@ -1,6 +1,5 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
-eval "$(hub alias -s)"
 eval "$(mise activate zsh)"
 
 root="$(cd $(dirname "${(%):-%N}"); pwd)"
