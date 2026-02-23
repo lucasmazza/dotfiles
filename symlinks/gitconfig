@@ -39,7 +39,6 @@
   signingkey = 03A0B5E0
 
 [push]
-  default = simple
   autoSetupRemote = true
 
 [merge]
@@ -60,10 +59,6 @@
 [github]
   user = lucasmazza
 
-[gpg]
-  program = /usr/local/bin/gpg
-[protocol]
-  version = 2
 
 [includeIf "gitdir:~/src/work/"]
   path = ~/.gitconfig.work
