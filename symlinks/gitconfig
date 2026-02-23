@@ -27,7 +27,7 @@
   undo = "!git reset --soft HEAD^ && git restore --staged . && git status"
   m = merge --no-edit
   autorebase=!GIT_SEQUENCE_EDITOR=touch git rebase --interactive --autosquash
-  tidy="!git remote prune origin; git branch --merged master --no-color | grep -v master | grep -v main | xargs git branch -d"
+  tidy="!git remote prune origin; git branch --merged main --no-color | grep -v master | grep -v main | xargs git branch -d"
   clear-branches="!git remote prune origin; git branch --no-color | grep -v master | grep -v main | xargs git branch -D"
   master-to-main="!git branch -m master main && git fetch origin && git branch -u origin/main main"
   squashy="commit --allow-empty -m 'Force squash on merge'"
