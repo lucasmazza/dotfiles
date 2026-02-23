@@ -3,8 +3,8 @@
 ## Installation
 
 ```sh
-git clone git@github.com:lucasmazza/dotfiles.git ~/src/dotfiles
-cd ~/src/dotfiles
+git clone git@github.com:lucasmazza/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
 ./script/setup
 ```
 
@@ -24,4 +24,3 @@ The [`script/setup`](script/setup) script will:
 * [`loop_this`](bin/loop_this)
 * [`pullall`](bin/pullall)
 * [`rconsole`](bin/rconsole)
-* [`slackbanner`](bin/slackbanner)

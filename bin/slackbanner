@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-text="$1"
-foreground="$2"
-background="${3:-":blank:"}"
-
-figlet -f banner "$text" | sed -e"s/#/$foreground/g" | sed -e"s/ /$background/g" | pbcopy
