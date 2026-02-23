@@ -26,4 +26,3 @@ The [`script/setup`](script/setup) script will:
 * [`pullall`](bin/pullall)
 * [`rconsole`](bin/rconsole)
 * [`slackbanner`](bin/slackbanner)
-* [`update-hex`](bin/update-hex)
