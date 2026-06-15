@@ -29,3 +29,5 @@ npm-debug.log
 .Trashes
 tmp
 .claude/worktrees/
+
+**/.claude/settings.local.json
