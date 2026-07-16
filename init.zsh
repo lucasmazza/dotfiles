@@ -14,7 +14,7 @@ for directory in $HOME/src/*; do
 done
 
 export PATH="$HOME/bin:$HOME/.bin:$root/bin:$PATH"
-export EDITOR="code -w -n"
+export EDITOR="zed -w -n"
 
 # Set `mise/asdf install` flags for Erlang and Postgres
 export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
