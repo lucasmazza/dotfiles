@@ -1,0 +1,5 @@
+# Put mise shims on PATH for login shells so GUI apps (e.g. Zed) that capture
+# the environment non-interactively resolve tool versions per-directory.
+# Interactive shells still get the full `mise activate zsh` from
+# ~/.dotfiles/init.zsh (via ~/.zshrc), which takes precedence at the prompt.
+eval "$(/opt/homebrew/bin/mise activate zsh --shims)"
