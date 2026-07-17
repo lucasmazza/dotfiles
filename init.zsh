@@ -6,6 +6,7 @@ root="$(cd $(dirname "${(%):-%N}"); pwd)"
 
 FPATH=$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH
 
+fpath=($HOME/.zsh/completions $fpath)
 autoload -Uz compinit
 compinit
 

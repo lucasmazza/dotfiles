@@ -36,6 +36,8 @@ create_directories() {
   mkdir -p $HOME/src/{me,oss,work}
 }
 
+mkdir -p "$HOME/.zsh/completions"
+
 link_files $__dir__
 link_files "$HOME/Dropbox"
 inject_init
