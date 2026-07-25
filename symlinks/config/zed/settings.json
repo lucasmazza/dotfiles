@@ -35,5 +35,11 @@
     "Ruby": {
       "language_servers": ["ruby-lsp", "!solargraph", "!rubocop"]
     }
+  },
+
+  "auto_install_extensions": {
+    "elixir": true,
+    "html": true,
+    "ruby": true,
   }
 }
