@@ -28,7 +28,8 @@
   "theme": "GitHub Light",
 
   "project_panel": {
-    "dock": "left"
+    "dock": "left",
+    "git_status_indicator": true
   },
 
   "languages": {
