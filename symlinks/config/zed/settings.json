@@ -45,4 +45,6 @@
     "vscode-icons-zed": true,
     "github-zed-theme": true,
   },
+
+  "show_edit_predictions": false
 }
