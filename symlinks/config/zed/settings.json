@@ -42,5 +42,7 @@
     "elixir": true,
     "html": true,
     "ruby": true,
-  }
+    "vscode-icons-zed": true,
+    "github-zed-theme": true,
+  },
 }
