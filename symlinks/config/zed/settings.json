@@ -42,6 +42,7 @@
     "elixir": true,
     "html": true,
     "ruby": true,
+    "terraform": true,
     "vscode-icons-zed": true,
     "github-zed-theme": true,
   },
